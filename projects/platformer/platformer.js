@@ -13,7 +13,7 @@ $(function () {
       $(document).on("keyup", handleKeyUp);
       firstTimeSetup = false;
       //start game
-      setInterval(main, 1000 / frameRate);
+      setInterval(main, 1060 / frameRate);
     }
     //create walls
     createPlatform(-50, -50, canvas.width + 100, 50); //top
@@ -38,36 +38,37 @@ $(function () {
     /////////////////////////////////////////////////
     //////////ONLY CHANGE BELOW THIS POINT///////////
     /////////////////////////////////////////////////
-    createCollectable("steve", 200, 170, 6, 0.7); //your example function call
+    createCollectable("steve", 140, 170, 6, 0.7); //your example function call
     
     
     // TODO 1
     // Create platforms
     // You must decide the x position, y position, width, and height of the platforms
     // example usage: createPlatform(x,y,width,height)
-    createPlatform(700, 750, 200, 20);
     createPlatform(350, 525, 200, 20);
-    createPlatform(1002, 525, 200, 20);
-    createPlatform(100, 300, 200, 20);
-    createPlatform(1360, 300, 200, 20);
+    createPlatform(1002, 500, 200, 20);
+    createPlatform(50, 470, 200, 20);
+    createPlatform(1200, 400, 150, 20);
+    createPlatform(650, 620, 200, 20);
     // TODO 2
     // Create collectables
     // You must decide on the collectable type, the x position, the y position, the gravity, and the bounce strength
     // Your collectable choices are 'database' 'diamond' 'grace' 'kennedi' 'max' and 'steve'; more can be added if you wish
     // example usage: createCollectable(type, x, y, gravity, bounce)
-    
-
-
-
+    createCollectable('max', 1235, 115, 6, 0.7);
+    createCollectable("grace", 1002, 300, 6, 0.7);
+    createCollectable('diamond', 715, 300, 6, 0.7);
+    createCollectable('database', 500, 200, 6, 0.7);
     // TODO 3
     // Create cannons
     // You must decide the wall you want the cannon on, the position on the wall, and the time between shots in milliseconds
     // Your wall choices are: 'top' 'left' 'right' and 'bottom'
     // example usage: createCannon(side, position, delay, width, height)
-
-
-
-
+    createCannon("top", 190, 1000);
+    createCannon("bottom", 840, 1500);
+    createCannon("top", 700, 1000);
+    createCannon("bottom", 650, 1500);
+    createCannon("top", 1300, 1000);
     /////////////////////////////////////////////////
     //////////ONLY CHANGE ABOVE THIS POINT///////////
     /////////////////////////////////////////////////
