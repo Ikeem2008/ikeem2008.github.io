@@ -124,14 +124,14 @@ function debug() {
   ctx.fillText("xs" + player.speedX + " x: " + player.x, 500, 200);
   ctx.fillText("ys" + player.speedY + " y: " + player.y, 500, 250);
 
-  ctx.fillStyle = "black";
+  ctx.fillStyle = "green";
   ctx.fillText("on ground " + player.onGround, 150 + player.x, player.y - 20);
   ctx.fillText("hitx" + hitDx, 150 + player.x, player.y);
   ctx.fillText("hity" + hitDy, 150 + player.x, player.y + 20);
   ctx.fillText("offsetx" + offsetX, 150 + player.x, player.y + 40);
   ctx.fillText("offsetY" + offsetY, 150 + player.x, player.y + 60);
 
-  ctx.fillStyle = "grey";
+  ctx.fillStyle = "green";
   ctx.fillRect(player.x, player.y, player.width, player.height);
 
   //debug showing collision
@@ -155,7 +155,7 @@ function animate() {
       currentAnimationType === animationTypes.duck
     )
   ) {
-    frameIndex = frameIndex + 15 / frameRate;
+    frameIndex = frameIndex + 30/ frameRate;
     if (duckTimer > 0) {
       duckTimer -= 0.25;
     }
@@ -358,7 +358,7 @@ function projectileCollision() {
 }
 
 function deathOfPlayer() {
-  ctx.fillStyle = "grey";
+  ctx.fillStyle = "red";
   ctx.fillRect(
     canvas.width / 4,
     canvas.height / 6,
@@ -367,15 +367,13 @@ function deathOfPlayer() {
   );
   ctx.fillStyle = "black";
   ctx.font = "800% serif";
-  ctx.fillText(
-    "You are dead",
+  ctx.fillText("Game Over",
     canvas.width / 4,
     canvas.height / 6 + canvas.height / 5,
     (canvas.width / 16) * 14
   );
   ctx.font = "500% serif";
-  ctx.fillText(
-    "Hit any key to restart",
+  ctx.fillText("Continue",
     canvas.width / 4,
     canvas.height / 6 + canvas.height / 3,
     (canvas.width / 16) * 14
