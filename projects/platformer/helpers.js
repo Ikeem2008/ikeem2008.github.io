@@ -8,7 +8,7 @@ function registerSetup(setup) {
 }
 
 function main() {
-  ctx.clearRect(0, 0, 1400, 750); //erase the screen so you can draw everything in it's most current position
+  ctx.clearRect(0, 0, 9000, 1000); //erase the screen so you can draw everything in it's most current position
 
   if (player.deadAndDeathAnimationDone) {
     deathOfPlayer();
@@ -157,7 +157,7 @@ function animate() {
   ) {
     frameIndex = frameIndex + 30/ frameRate;
     if (duckTimer > 0) {
-      duckTimer -= 0.25;
+      duckTimer -= 1;
     }
   }
   changeAnimationType();
@@ -374,8 +374,8 @@ function deathOfPlayer() {
   );
   ctx.font = "500% serif";
   ctx.fillText("Continue",
-    canvas.width / 4,
-    canvas.height / 6 + canvas.height / 3,
+    canvas.width / 4.5,
+    canvas.height / 5 + canvas.height / 3,
     (canvas.width / 16) * 14
   );
   if (keyPress.any) {
@@ -409,7 +409,7 @@ function playerFrictionAndGravity() {
 
 function drawPlatforms() {
   for (var i = 0; i < platforms.length; i++) {
-    ctx.fillStyle = "grey";
+    ctx.fillStyle = "blue";
     ctx.fillRect(
       platforms[i].x,
       platforms[i].y,
@@ -448,7 +448,7 @@ function drawCannons() {
       cannons[i].projectileCountdown = cannons[i].projectileCountdown + 1;
     }
 
-    ctx.fillStyle = "grey";
+    ctx.fillStyle = "yellow";
     ctx.save(); //save the current translation of the screen.
     ctx.translate(cannons[i].x, cannons[i].y); //you are moving the top left of the screen to the pictures location, this is because you can't rotate the image, you have to rotate the whole page
     ctx.rotate((cannons[i].rotation * Math.PI) / 180); //then you rotate. rotation is centered on 0,0 on the canvas, which is why we moved the picture to 0,0 with translate(x,y)
